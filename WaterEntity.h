@@ -11,12 +11,12 @@ public:
 	virtual ~WaterEntity();
 	
 // Getter & Setter
-	int getX(){return x;};
-	int getY(){return y;};
-	int getSpeed(){return speed;};
-	void setX(int _x){x = _x;};
-	void setY(int _y){y = _y;};
-	void setSpeed(int _speed){speed = _speed;};
+	int getX();
+	int getY();
+	int getSpeed();
+	void setX(int _x);
+	void setY(int _y);
+	void setSpeed(int _speed);
 
 	virtual void move() = 0;
 
