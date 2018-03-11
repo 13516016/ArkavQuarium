@@ -1,4 +1,4 @@
-class Snail
+class Snail : public Pet
 {
 public:
 	Snail();
@@ -6,6 +6,6 @@ public:
 	Snail(const Snail& S);
 	Snail& operator=(const Snail& S);
 	~Snail();
-	
+
 	void moveTo(int x, int y);
 };
