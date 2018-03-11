@@ -1,3 +1,8 @@
+#ifndef SNAIL_H
+#define SNAIL_H
+
+#include "Pet.h"
+
 class Snail : public Pet
 {
 public:
@@ -9,3 +14,4 @@ public:
 
 	void moveTo(int x, int y);
 };
+#endif

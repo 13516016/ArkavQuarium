@@ -1,7 +1,8 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include "Animal.h"
+#include "Movement.h"
+#include "WaterEntity.h"
 #include "Coin.h"
 
 class Fish : public WaterEntity, public Movement

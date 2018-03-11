@@ -1,6 +1,9 @@
 #ifndef PET_H
 #define PET_H
 
+#include "WaterEntity.h"
+#include "Movement.h"
+
 class Pet : public WaterEntity, public Movement
 {
 public:
