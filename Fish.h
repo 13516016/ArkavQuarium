@@ -1,35 +1,35 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include "WaterEntity.h"
+#include "Animal.h"
 #include "Coin.h"
 
-class Fish : public WaterEntity
+class Fish : public WaterEntity, public Movement
 {
 public:
 	Fish();
-	Fish(int x, int y);
+	Fish(int x, int y, int speed, int level);
 	Fish(const Fish& F);
 	Fish& operator=(const Fish& F);
 	virtual ~Fish();
 
 	// Getter & Setter
-	int getHungryDuration();
-	int getFullDuration();
-	int getLevel();
-	bool isFull();
+	int getHungryDuration() const;
+	int getFullDuration() const;
+	int getLevel() const;
+	bool isFull() const;
 	void setHungryDuration(int hungryDuration);
 	void setFullDuration(int fullDuration);
 	void setLevel(int level);
 	void setFull();
 
-	// Methods
-	void move(); //Random move. For specific movement, implement it in the child class.
-	Coin produceCoin()=0;
+	void move();
+	void moveTo(int x, int y);
+	Coin produceCoin(int value)=0;
 
 private:
-	int hungryDuration;
-	int fullDuration;
+	const int hungryDuration;
+	const int fullDuration;
 	int level;
 	bool full;
 

@@ -8,8 +8,6 @@ public:
 	Food(const Food& F);
 	Food& operator=(const Food& F);
 	~Food();
-
-
 };
 
 #endif

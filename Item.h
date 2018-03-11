@@ -11,8 +11,7 @@ public:
 	Item(const Item& A);
 	Item& operator=(const Item& A);
 	virtual ~Item();
-	void move();
-
+	void move(); //Move downward
 };
 
 

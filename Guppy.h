@@ -2,6 +2,8 @@
 #define GUPPY_H
 
 #include "Fish.h"
+#include "Food.h"
+#include "List.h"
 
 class Guppy: public Fish
 {
@@ -13,10 +15,12 @@ public:
 	~Guppy();
 
 	// GETTER SETTER
-	int getCoinInterval;
+	int getCoinInterval() const;
 	void setCoinInterval(int coinInterval);
-	
-	Coin produceCoin();
+
+	// METHODS
+	Food getNearestFood(List<Food> LF); // Get the nearest food
+	Coin produceCoin(int value);
 
 private:
 	int coinInterval;
