@@ -24,16 +24,14 @@ public:
 	int getFullDuration() const;
 	int getLevel() const;
 	int getExp() const;
-	bool isFull() const;
 	// Setter
 	void setHungryDuration(int hungryDuration);
 	void setFullDuration(int fullDuration);
 	void setLevel(int level);
 	void setExp(int exp);
-	void setFull();
 	// Other Methods
 	virtual void move()=0;
-	Coin produceCoin(int value)=0;
+	virtual Coin produceCoin(int value)=0;
 
 // Variable
 private:
