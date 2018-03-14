@@ -23,7 +23,6 @@ public:
 	void setMoney(int money);
 	// Method
 	void updateTurn();
-	
 // Variable
 private:
 	string name;

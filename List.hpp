@@ -22,6 +22,8 @@ public:
 	List(T value);
 	List(const List& L);
 	List& operator=(const List& L);
+	List& operator<<(int value);
+	friend ostream& operator<<(ostream& os, const List& L) const;
 	~List();
 
 	int find(T element);
@@ -29,7 +31,6 @@ public:
 	void add(T element);
 	void remove(T element);
 	T get(int idx) const;
-
 
 private:
 	Node<T> *head;

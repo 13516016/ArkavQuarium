@@ -19,6 +19,7 @@ public:
 	int getValue();
 	void setValue(int value);
 
+	friend ostream& operator<<(ostream& os, const Coin& C) const;
 // Variable
 private:
 	int value;

@@ -18,5 +18,7 @@ public:
 	~Snail();
 	// Other methods
 	void moveTo(int x, int y);
+
+	friend ostream& operator<<(ostream& os, const Snail& S) const;
 };
 #endif

@@ -1,8 +1,8 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include <iostream>
 #include "WaterEntity,h"
-
 // Class of item
 class Item : public WaterEntity
 {
@@ -17,6 +17,7 @@ public:
 	// Dtor
 	virtual ~Item();
 	// Other method
+	friend ostream& operator<<(ostream& os, const Item& I) const;
 	void move(); //Move downward
 };
 

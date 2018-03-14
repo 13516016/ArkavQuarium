@@ -1,9 +1,11 @@
 #ifndef GUPPY_H
 #define GUPPY_H
 
+#include <iostream>
 #include "Fish.h"
 #include "Food.h"
 #include "List.h"
+
 
 // Class of the guppy
 class Guppy: public Fish
@@ -24,8 +26,11 @@ public:
 	void setCoinInterval(int coinInterval);
 
 	// METHODS
+	void move();
 	Food getNearestFood(List<Food> LF); // Get the nearest food
 	Coin produceCoin(int value);
+	// buat print
+	friend ostream& operator<<(ostream& os, const Guppy& G) const;
 // Private
 private:
 	int coinInterval;

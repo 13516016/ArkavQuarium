@@ -1,7 +1,10 @@
 #ifndef WATER_ENTITY_H
 #define WATER_ENTITY_H
 
-const string[] direction = {"up", "down", "left", "right"};
+enum directionList
+{
+	UP,UP_RIGHT,RIGHT,DOWN_RIGHT,DOWN,DOWN_LEFT,LEFT,UP_LEFT
+};
 
 // Class of Water Entity
 class WaterEntity
@@ -27,7 +30,7 @@ public:
 	void setX(int _x);
 	void setY(int _y);
 	void setSpeed(int _speed);
-	void setDirection(string dir);
+	void setDirection(int dir);
 	// Method
 	double getDistance(const WaterEntity WE) const;
 
@@ -36,7 +39,7 @@ private:
 	int x;
 	int y;
 	int speed;
-	string direction;
+	int direction;
 };
 
 #endif

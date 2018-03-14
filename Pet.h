@@ -1,4 +1,5 @@
 #ifndef PET_H
+#ifndef PET_H
 #define PET_H
 
 #include "WaterEntity.h"
@@ -15,12 +16,12 @@ public:
 	Pet();
 	Pet(int x, int y, int speed);
 	// CCtor
-	Pet(const Pet& );
+	Pet(const Pet& P);
 	// Dtor
 	virtual ~Pet();
 	// Other method
 	// Do nothing
-	virtual void move(); 
+	virtual void move(int x, int y); 
 	// Move towards the nearest coin, NB: Cannot go upward
 	virtual void moveTo(int x, int y)=0; 
 	Coin getNearestCoin(List<Coin> CL);
