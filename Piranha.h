@@ -5,16 +5,23 @@
 #include "Guppy.h"
 #include "List.h"
 
+// Class Piranha
 class Piranha : public Fish
 {
+// Methods
 public:
+	// Ctor
 	Piranha();
 	Piranha(int x, int y);
+	// Cctor
 	Piranha(const Piranha& P);
 	Piranha& operator=(const Piranha& P);
+	// Dtor
 	~Piranha();
-	
-	Guppy getNearestGuppy(List<Guppy> LG); // Get the nearest guppy
+	// Other methods
+	// Get the nearest guppy
+	Guppy getNearestGuppy(List<Guppy> LG); 
+	// Produce the coin by eating a guppy
 	Coin produceCoin(int value);
 };
 
