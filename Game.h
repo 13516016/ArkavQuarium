@@ -23,14 +23,15 @@ public:
 	void setMoney(int money);
 	// Method
 	void updateTurn();
+	void updateFish();
+	void updatePet();
+	void updateItem();
 // Variable
 private:
 	string name;
 	int turn;
 	int totalMoney;
 	Aquarium aquarium;
-
-}
-
+};
 
 #endif

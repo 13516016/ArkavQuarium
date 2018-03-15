@@ -4,20 +4,19 @@
 #include <iostream>
 #include "Fish.h"
 #include "Food.h"
-#include "List.h"
-
+#include "AquariumEntity.h"
 
 // Class of the guppy
-class Guppy: public Fish
+class Guppy: public Fish, public AquariumEntity
 {
 // Methods
 public:
 	// Ctor
-	Guppy();
-	Guppy(int x, int y);
-	// Cctor
-	Guppy(const Guppy& G);
-	Guppy& operator=(const Guppy& G);
+	// Set to random x, y, and speed of Guppy
+	Guppy(Aquarium& a);
+	// Set to point x y and also the speed of Guppy
+	Guppy(int x, int y, Aquarium& a);
+
 	// Dtor
 	~Guppy();
 
@@ -26,10 +25,17 @@ public:
 	void setCoinInterval(int coinInterval);
 
 	// METHODS
-	Food getNearestFood(List<Food> LF); // Get the nearest food
-	Coin produceCoin(int value);
-	// buat print
+	void update();
 	friend ostream& operator<<(ostream& os, const Guppy& G) const;
+	
+
+protected:
+	void findNearestFood();
+	Coin produceCoin();
+	void eat();
+	
+	// buat print
+	
 // Private
 private:
 	int coinInterval;
