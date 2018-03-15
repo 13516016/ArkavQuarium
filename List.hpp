@@ -158,7 +158,9 @@ void List<T>::remove(T element) {
 				prev = temp;
 				temp = temp->next;
 			}
+
 			prev->next = temp->next;
+			delete temp;
 		}
 	}
 }
