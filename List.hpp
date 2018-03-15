@@ -23,7 +23,12 @@ public:
 	List(const List& L);
 	List& operator=(const List& L);
 	List& operator<<(int value);
-	friend ostream& operator<<(ostream& os, const List& L) const;
+	friend ostream& operator<<(ostream& os, const List<T>& L) {
+
+	}
+	Node<T>* getHead() {
+		return head;
+	}
 	~List();
 
 	int find(T element);
@@ -51,48 +56,52 @@ List<T>::List(T value) {
 	this->head = node;
 }
 
-
-// NOT YET
 template <class T>
 List<T>::List(const List<T>& L) {
 	Node<T> *address = L.head;
-	Node<T> *addressNext = address->next;
 
-	if(L.head != NULL){
-		while(addressNext->next != L.head) {
-			add(address->data)
-			address = addressNext->next;
-			addressNext = addressNext->next;
+	this->head = NULL;
+
+	if(address != NULL){
+		while(address->next != L.head) {
+			add(address->data);
+			address = address->next;
 		}
+		add(address->data);
 	}
 }
 
-// NOT YET
 template <class T>
 List<T>& List<T>::operator=(const List<T>& L) {
+	Node<T> *address = head;
 	while(head!= NULL){
-		remove(head->data);
+		remove(this->head->data);
+		address = head;
 	}
 
-	Node<T> *address = L.head;
+	address = L.head;
 	Node<T> *addressNext = address->next;
 
-	if(L.head != NULL){
-		while(addressNext->next != L.head) {
-			add(address->data)
-			address = addressNext->next;
-			addressNext = addressNext->next;
+	if(address != NULL){
+		while(address->next != L.head) {
+			add(address->data);
+			address = address->next;
 		}
+		add(address->data);
 	}
 }
 
+template <class T>
+List<T>& List<T>::operator<<(int value) {
+	add(value);
+	return *this;
+}
 
-// NOT YET
 template <class T>
 List<T>::~List() {
 	while(head!= NULL){
 		remove(head->data);
-	}		
+	}
 }
 	
 
@@ -154,13 +163,18 @@ void List<T>::remove(T element) {
 			this->head = NULL;
 		} else {
 			temp = this->head;
+			prev = this->head;
+			while(prev->next != this->head) prev = prev->next;
 			while(temp->data != element && temp->next != this->head) {
 				prev = temp;
 				temp = temp->next;
 			}
-
-			prev->next = temp->next;
-			delete temp;
+			if(prev->next != this->head) prev->next = temp->next;
+			else {
+				this->head = temp->next;
+				prev->next = this->head;
+			}
+			temp = temp->next;
 		}
 	}
 }
