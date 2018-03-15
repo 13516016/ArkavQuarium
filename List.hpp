@@ -70,12 +70,10 @@ List<T>::List(const List<T>& L) {
 // NOT YET
 template <class T>
 List<T>& List<T>::operator=(const List<T>& L) {
-	Node<T> *address = head;
 	while(head!= NULL){
-		remove(this->data);
-		address = head;
+		remove(head->data);
 	}
-
+	
 	address = L.head;
 	Node<T> *addressNext = address->next;
 
@@ -92,7 +90,9 @@ List<T>& List<T>::operator=(const List<T>& L) {
 // NOT YET
 template <class T>
 List<T>::~List() {
-
+	while(head!= NULL){
+		remove(head->data);
+	}		
 }
 	
 
