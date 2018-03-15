@@ -55,18 +55,14 @@ List<T>::List(T value) {
 // NOT YET
 template <class T>
 List<T>::List(const List<T>& L) {
-	// Node<T> *temp, *Ltemp;
-	Node<T> temp = new Node<T>();
-	Node<T> *Ltemp;
+	Node<T> *address = L.head;
+	Node<T> *addressNext = address->next;
 
 	if(L.head != NULL){
-		this->data = L.data;
-		temp = this->head;
-		Ltemp = L.head;
-		while(Ltemp->next != L.head) {
-			Ltemp = Ltemp->next;
-			temp.next = Ltemp;
-			temp = temp.next;
+		while(addressNext->next != L.head) {
+			add(address->data)
+			address = addressNext->next;
+			addressNext = addressNext->next;
 		}
 	}
 }
@@ -74,16 +70,31 @@ List<T>::List(const List<T>& L) {
 // NOT YET
 template <class T>
 List<T>& List<T>::operator=(const List<T>& L) {
+	Node<T> *address = head;
+	while(head!= NULL){
+		remove(this->data);
+		address = head;
+	}
 
+	address = L.head;
+	Node<T> *addressNext = address->next;
+
+	if(L.head != NULL){
+		while(addressNext->next != L.head) {
+			add(address->data)
+			address = addressNext->next;
+			addressNext = addressNext->next;
+		}
+	}
 }
 
 
 // NOT YET
 template <class T>
 List<T>::~List() {
-	
-}
 
+}
+	
 
 template <class T>
 int List<T>::find(T element) {
