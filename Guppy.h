@@ -33,9 +33,7 @@ protected:
 	void findNearestFood();
 	Coin produceCoin();
 	void eat();
-	
-	// buat print
-	
+		
 // Private
 private:
 	int coinInterval;

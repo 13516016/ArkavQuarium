@@ -31,7 +31,7 @@ public:
 	void addSnail(Snail);
 
 	// Getter
-	List<Guppy> getListOfFish();
+	List<Fish> getListOfFish();
 	List<Coin> getListOfCoin();
 	List<Food> getListOfFood();
 	List<Snail> getListOfSnail();
