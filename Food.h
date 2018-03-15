@@ -1,5 +1,5 @@
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef FOOD_H
+#define FOOD_H
 
 #include "Item.h"
 
@@ -9,7 +9,7 @@ class Food : public Item
 // Methods
 public:
 	// Ctor
-	Food(int x, int y, int _hungerPoint, Aquarium& a);
+	Food(int x, int y, int _hungerPoint);
 
 	// Dtor
 	~Food();

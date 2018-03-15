@@ -1,11 +1,11 @@
 #ifndef AQUARIUM_H
 #define AQUARIUM_H
 
-#include "List.h"
+#include "List.hpp"
 #include "Fish.h"
 #include "Coin.h"
 #include "Food.h"
-#include "Snail.h"
+#include "Pet.h"
 
 // Class which containt all the object of the fish, etc.
 class Aquarium
@@ -24,11 +24,10 @@ public:
 	~Aquarium();
 
 	// Add
-	void addGuppy(Guppy);
-	void addPiranha(Piranha);
-	void addCoin(Coin);
-	void addFood(Food);
-	void addSnail(Snail);
+	void addFish(Fish&);
+	void addCoin(Coin&);
+	void addFood(Food&);
+	void addPet(Pet&);
 
 	// Getter
 	List<Fish> getListOfFish();

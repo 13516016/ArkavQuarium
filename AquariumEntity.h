@@ -16,7 +16,7 @@ public:
 	// Ctor
 	// Set to default x, y, and speed
 	AquariumEntity(Aquarium& a);
-	AquariumEntity(int x,int y, int speed, Aquarium& a);
+	AquariumEntity(int x, int y, int speed, Aquarium& a);
 	// Cctor
 	AquariumEntity(const AquariumEntity& WE);
 	// Operator =

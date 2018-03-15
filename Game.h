@@ -12,10 +12,7 @@ public:
 	Game(); 
 	// Set name, set height, set width
 	Game(string name, int height, int width);
-	// Cctor
-	Game(const Game& game);
-	// Operator =
-	Game& operator=(const Game& game);
+
 	// Getter
 	int getTurn();
 	int getTotalMoney();
