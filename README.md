@@ -102,7 +102,7 @@ Kelas ini menurunkan sifat dari kelas **AquariumEntity**.
 
 #### Food 
 Class yang merepresentasikan objek makanan ikan (**Food**)
-Kelas ini menurunkan sifat dari kelas **Item	**
+Kelas ini menurunkan sifat dari kelas **Item**
 
 | Fungsi  | Keterangan |
 |---------|------------|
