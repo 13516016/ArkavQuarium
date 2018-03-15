@@ -73,8 +73,8 @@ List<T>& List<T>::operator=(const List<T>& L) {
 	while(head!= NULL){
 		remove(head->data);
 	}
-	
-	address = L.head;
+
+	Node<T> *address = L.head;
 	Node<T> *addressNext = address->next;
 
 	if(L.head != NULL){
