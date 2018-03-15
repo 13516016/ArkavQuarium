@@ -28,7 +28,7 @@ public:
 	// Other Methods
 
 	virtual void update()=0;
-
+	
 protected:
 	virtual void findNearestFood()=0;
 	virtual Coin produceCoin()=0;

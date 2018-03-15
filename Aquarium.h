@@ -38,10 +38,10 @@ public:
 
 // Variable
 private:
-	List<Fish> listOfFish;
-	List<Coin> listOfCoin;
-	List<Food> listOfFood;
-	List<Pet> listOfPet;
+	List<Fish*> listOfFish;
+	List<Coin*> listOfCoin;
+	List<Food*> listOfFood;
+	List<Pet*> listOfPet;
 	int width, height; // size of aquarium
 };
 

@@ -9,7 +9,7 @@ using namespace std;
 template<class T>
 struct Node
 {
-	T * data;
+	T data;
 	Node *next;
 };
 
@@ -51,7 +51,7 @@ template <class T>
 List<T>::List(T value) {
 	Node<T>* node = new Node<T>();
 
-	*(node->data) = value;
+	node->data = value;
 	node->next = this->head;
 	this->head = node;
 }
@@ -64,10 +64,10 @@ List<T>::List(const List<T>& L) {
 
 	if(address != NULL){
 		while(address->next != L.head) {
-			add(*(address->data));
+			add(address->data);
 			address = address->next;
 		}
-		add(*(address->data));
+		add(address->data);
 	}
 }
 
@@ -75,7 +75,7 @@ template <class T>
 List<T>& List<T>::operator=(const List<T>& L) {
 	Node<T> *address = head;
 	while(head!= NULL){
-		remove(*(this->head->data));
+		remove(this->head->data);
 		address = head;
 	}
 
@@ -84,10 +84,10 @@ List<T>& List<T>::operator=(const List<T>& L) {
 
 	if(address != NULL){
 		while(address->next != L.head) {
-			add(*(address->data));
+			add(address->data);
 			address = address->next;
 		}
-		add(*(address->data));
+		add(address->data);
 	}
 }
 
@@ -100,7 +100,7 @@ List<T>& List<T>::operator<<(int value) {
 template <class T>
 List<T>::~List() {
 	while(head!= NULL){
-		remove(*(head->data));
+		remove(head->data);
 	}
 }
 	
@@ -113,7 +113,7 @@ int List<T>::find(T element) {
 
 	temp = this->head;
 	while(temp->next != this->head) {
-		if(*(temp->data) == element) {
+		if(temp->data == element) {
 			answer = index;
 			break;
 		}
@@ -121,7 +121,7 @@ int List<T>::find(T element) {
 		temp = temp->next;
 	}
 
-	if(*(temp->data) == element) answer = index;
+	if(temp->data == element) answer = index;
 
 	return answer;
 }
@@ -137,7 +137,7 @@ template <class T>
 void List<T>::add(T element) {
 	Node<T>* node = new Node<T>();
 
-	*(node->data) = element;
+	node->data = element;
 	if(isEmpty()) {
 		this->head = node;
 		this->head->next = this->head;
@@ -146,7 +146,7 @@ void List<T>::add(T element) {
 		while(last->next != this->head) {
 			last = last->next;
 		}
-		*(node->data) = element;
+		node->data = element;
 		node->next = this->head;
 		last->next = node;
 	}
@@ -165,7 +165,7 @@ void List<T>::remove(T element) {
 			temp = this->head;
 			prev = this->head;
 			while(prev->next != this->head) prev = prev->next;
-			while(*(temp->data) != element && temp->next != this->head) {
+			while(temp->data != element && temp->next != this->head) {
 				prev = temp;
 				temp = temp->next;
 			}
@@ -189,7 +189,7 @@ T List<T>::get(int idx) const {
 	temp = this->head;
 	while(temp->next != this->head) {
 		if(index == idx) {
-			answer = *(temp->data);
+			answer = temp->data;
 			break;
 		}
 		index++;
@@ -197,7 +197,7 @@ T List<T>::get(int idx) const {
 	}
 
 	if(index == idx) {
-		answer = *(temp->data);
+		answer = temp->data;
 		return answer;
 	} else return -1; // -1 if index not found
 }
