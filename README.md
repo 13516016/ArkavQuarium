@@ -11,6 +11,7 @@
 ### Class List: 
 #### Game 
 Class yang mengatur control Game berjalan.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`void updateTurn();`  | Melakukan update turn pada game |
@@ -21,6 +22,7 @@ Class yang mengatur control Game berjalan.
 #### Aquarium 
 Class yang merepresentasikan Aquarium yang berisi objek-objek seperti Guppy, Piranha, Food, dan Coin.
 Aquarium juga bertindak sebagai *map* dalam Game.
+
 | Fungsi  | Keterangan |
 |--|--|
 |` List<Fish> getListOfFish(); `  | Mengembalikan daftar **Fish** dalam bentuk list |
@@ -31,6 +33,7 @@ Aquarium juga bertindak sebagai *map* dalam Game.
 ####   AquariumEntity
 Class yang merepresentasikan entitas-entitas dasar yang ada di dalam Aquarium.
 Kelas ini menjadi dasar untuk pembuatan objek Fish dan Item
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |` virtual void move()=0;`  | Pure virtual function yang melakukan pergerakan objek |
@@ -40,6 +43,7 @@ Kelas ini menjadi dasar untuk pembuatan objek Fish dan Item
 Class yang merepresentasikan objek yang berupa ikan.
 Kelas ini menurunkan sifat dari kelas **AquariumEntity**. 
 Kelas ini menjadi dasar untuk pembuatan objek Guppy dan Piranha.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`virtual void findNearestFood()=0;`  | Interface untuk mencari makanan terdekat dan mengubah arah direksi dari ikan tersebut  |
@@ -51,6 +55,7 @@ Kelas ini menjadi dasar untuk pembuatan objek Guppy dan Piranha.
 #### Guppy
 Class yang merepresentasikan objek **Guppy**.
 Guppy memiliki kemiripan dengan **Piranha**, namun berbeda di proses makan dan menghasilkan **Coin**.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`void findNearestFood();`  | Implementasi fungsi dari kelas **Fish** untuk mencari makanan terdekat dan mengubah arah direksi|
@@ -61,6 +66,7 @@ Guppy memiliki kemiripan dengan **Piranha**, namun berbeda di proses makan dan m
 #### Piranha
 Class yang merepresentasikan objek **Piranha**.
 Piranha memiliki kemiripan dengan **Guppy**, namun berbeda di proses makan dan menghasilkan **Coin**.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`void findNearestFood();`  | Implementasi fungsi dari kelas Fish untuk mencari makanan terdekat dan mengubah arah direksi|
@@ -71,6 +77,7 @@ Piranha memiliki kemiripan dengan **Guppy**, namun berbeda di proses makan dan m
 #### Pet
 Class yang merepresentasikan objek-objek yang berupa **Pet**.
 Kelas ini menjadi interface dasar untuk object **Snail** dan memungkinkan untuk menambah Pet lainnya.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`virtual void update()=0;`  | Interface untuk melakukan update pada objek Pet|
@@ -79,6 +86,7 @@ Kelas ini menjadi interface dasar untuk object **Snail** dan memungkinkan untuk 
 #### Snail
 Class yang merepresentasikan objek Snail.
 Kelas ini mengimplementasi interface **Pet** .
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`void update();`  | Implementasi fungsi dari kelas **Snail** untuk melakukan update |
@@ -87,6 +95,7 @@ Kelas ini mengimplementasi interface **Pet** .
 #### Item 
 Class yang merepresentasikan objek **Item** yang menjadi dasar kelas **Food** dan **Coin**
 Kelas ini menurunkan sifat dari kelas **AquariumEntity**.
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`void move();`  | Implementasi fungsi untuk melakukan pergerakan ke dasar aquarium (bergerak ke bawah)|
@@ -94,6 +103,7 @@ Kelas ini menurunkan sifat dari kelas **AquariumEntity**.
 #### Food 
 Class yang merepresentasikan objek makanan ikan (**Food**)
 Kelas ini menurunkan sifat dari kelas **Item	**
+
 | Fungsi  | Keterangan |
 |---------|------------|
 |`	bool isBottom();`  | Memeriksa apakah lokasi makanan ada di dasar akuarium|
