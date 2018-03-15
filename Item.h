@@ -2,24 +2,20 @@
 #define ITEM_H
 
 #include <iostream>
-#include "WaterEntity,h"
+#include "AquariumEntity.h"
+
 // Class of item
-class Item : public WaterEntity
+class Item : public AquariumEntity
 {
 // Methods
 public:
 	// Ctor
-	Item();
-	Item(int x, int y);
-	// CCtor
-	Item(const Item& A);
-	Item& operator=(const Item& A);
+	Item(Aquarium& a);
+	Item(int x, int y, Aquarium& a);
 	// Dtor
 	virtual ~Item();
 	// Other method
-	void move(); //Move downward
-	friend ostream& operator<<(ostream& os, const Item& I) const;
+	void move();
 };
-
 
 #endif

@@ -1,18 +1,15 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include "Movement.h"
-#include "WaterEntity.h"
 #include "Coin.h"
 
 // Class of Fish
-class Fish : public WaterEntity, public Movement
+class Fish
 {
 // Methods
 public:
 	// Ctor
 	Fish();
-	Fish(int x, int y, int speed, int level);
 	// CCtor
 	Fish(const Fish& F);
 	Fish& operator=(const Fish& F);
@@ -30,8 +27,10 @@ public:
 	void setLevel(int level);
 	void setExp(int exp);
 	// Other Methods
-	void move();
-	virtual Coin produceCoin(int value)=0;
+	virtual void findNearestFood()=0;
+	virtual Coin produceCoin()=0;
+	virtual void eat()=0;
+	virtual void update()=0;
 
 // Variable
 private:

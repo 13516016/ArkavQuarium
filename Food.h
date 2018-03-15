@@ -9,14 +9,15 @@ class Food : public Item
 // Methods
 public:
 	// Ctor
-	Food(int x, int y, int _hungerPoint);
-	// Cctor
-	Food(const Food& F);
-	Food& operator=(const Food& F);
+	Food(int x, int y, int _hungerPoint, Aquarium& a);
+
 	// Dtor
+	~Food();
+
+	// Getter and Setter
 	int getHungerPoint();
 	void setHungerPoint(int _hungerPoint);
-	~Food();
+	bool isBottom();
 
 private:
 	int hungerPoint;
