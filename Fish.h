@@ -30,7 +30,7 @@ public:
 	void setLevel(int level);
 	void setExp(int exp);
 	// Other Methods
-	virtual void move()=0;
+	void move();
 	virtual Coin produceCoin(int value)=0;
 
 // Variable

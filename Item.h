@@ -17,8 +17,8 @@ public:
 	// Dtor
 	virtual ~Item();
 	// Other method
-	friend ostream& operator<<(ostream& os, const Item& I) const;
 	void move(); //Move downward
+	friend ostream& operator<<(ostream& os, const Item& I) const;
 };
 
 

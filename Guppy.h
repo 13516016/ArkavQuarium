@@ -26,7 +26,6 @@ public:
 	void setCoinInterval(int coinInterval);
 
 	// METHODS
-	void move();
 	Food getNearestFood(List<Food> LF); // Get the nearest food
 	Coin produceCoin(int value);
 	// buat print

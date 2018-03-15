@@ -21,9 +21,8 @@ public:
 	virtual ~Pet();
 	// Other method
 	// Do nothing
-	virtual void move(int x, int y); 
+	virtual void move(); 
 	// Move towards the nearest coin, NB: Cannot go upward
-	virtual void moveTo(int x, int y)=0; 
 	Coin getNearestCoin(List<Coin> CL);
 
 };

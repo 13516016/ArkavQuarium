@@ -23,7 +23,6 @@ public:
 	Guppy getNearestGuppy(List<Guppy> LG); 
 	// Produce the coin by eating a guppy
 	Coin produceCoin(int value);
-	void move();
 
 	friend ostream& operator<<(ostream& os, const Guppy& G) const;
 };
