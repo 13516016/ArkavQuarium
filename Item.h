@@ -1,21 +1,31 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include <iostream>
-#include "AquariumEntity.h"
-
 // Class of item
-class Item : public AquariumEntity
+class Item 
 {
 // Methods
 public:
 	// Ctor
-	Item(Aquarium& a);
-	Item(int x, int y, Aquarium& a);
+	Item();
+	Item(int x, int y);
 	// Dtor
 	virtual ~Item();
+
+	// Getter
+	int getX();
+	int getY();
+
+	// Setter
+	void setX();
+	void setY();
+	
 	// Other method
 	void move();
+private:
+	const int speed;
+	int x;
+	int y;
 };
 
 #endif
