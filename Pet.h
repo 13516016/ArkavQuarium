@@ -6,6 +6,7 @@ class Pet
 {
 // Method
 public:
+	virtual ~Pet();
 	// Other method
 	// Move towards the nearest coin, NB: Cannot go upward
 	virtual void update()=0;

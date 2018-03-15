@@ -3,6 +3,7 @@
 
 #include "Coin.h"
 
+
 // Class of Fish
 class Fish
 {
@@ -10,9 +11,7 @@ class Fish
 public:
 	// Ctor
 	Fish();
-	// CCtor
-	Fish(const Fish& F);
-	Fish& operator=(const Fish& F);
+
 	// Dtor
 	virtual ~Fish();
 
@@ -27,10 +26,13 @@ public:
 	void setLevel(int level);
 	void setExp(int exp);
 	// Other Methods
+
+	virtual void update()=0;
+
+protected:
 	virtual void findNearestFood()=0;
 	virtual Coin produceCoin()=0;
 	virtual void eat()=0;
-	virtual void update()=0;
 
 // Variable
 private:
