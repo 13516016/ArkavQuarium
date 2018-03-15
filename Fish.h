@@ -31,7 +31,7 @@ public:
 	
 protected:
 	virtual void findNearestFood()=0;
-	virtual Coin produceCoin()=0;
+	virtual Coin& produceCoin()=0;
 	virtual void eat()=0;
 
 // Variable

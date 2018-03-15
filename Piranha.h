@@ -25,7 +25,7 @@ public:
 
 protected:
 	// Produce the coin by eating a guppy
-	Coin produceCoin();
+	Coin& produceCoin();
 	void eat();
 	void findNearestFood();
 };

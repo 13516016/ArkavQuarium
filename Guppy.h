@@ -31,7 +31,7 @@ public:
 
 protected:
 	void findNearestFood();
-	Coin produceCoin();
+	Coin& produceCoin();
 	void eat();
 		
 // Private
